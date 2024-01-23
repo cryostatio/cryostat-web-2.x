@@ -42,7 +42,7 @@ module.exports = merge(common('production'), {
       chunkFilename: '[name].[contenthash].bundle.css' // lazy-load css
     }),
     new EnvironmentPlugin({
-      CRYOSTAT_AUTHORITY: '',
+      CRYOSTAT_AUTHORITY: '.',
       PREVIEW: process.env.PREVIEW || 'false'
     })
   ],
