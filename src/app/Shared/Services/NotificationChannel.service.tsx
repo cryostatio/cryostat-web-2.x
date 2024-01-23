@@ -72,7 +72,9 @@ export class NotificationChannel {
         });
       });
 
-    const notificationsUrl = fromFetch(`${this.login.authority}/api/v1/notifications_url`).pipe(
+    const url = `${this.login.authority}/api/v1/notifications_url`;
+    console.log({ notificationsUrl: url });
+    const notificationsUrl = fromFetch(url).pipe(
       concatMap(async (resp) => {
         if (resp.ok) {
           const body: NotificationsUrlGetResponse = await resp.json();
